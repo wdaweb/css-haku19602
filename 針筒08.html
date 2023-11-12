@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 100px;
+      background: red;
+    }
+
+    .main {
+      /* 主體 */
+      position: absolute;
+      width: 400px;
+      height: 100px;
+      border: 1px solid gray;
+      background-image: linear-gradient(90deg, white 0%, white 50%, rgb(255, 255, 150) 50%, rgb(255, 255, 150) 100%);
+    }
+
+    .main::before {
+      /* 頭1 */
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 70px;
+      border-radius: 0 10px 10px 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0)100%);
+      border: 1px solid gray;
+      right: -52px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .main::after {
+      /* 頭2 */
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 0;
+      border-top: 1px solid #000;
+      right: -132px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .shadow {
+      /* 陰影 */
+      position: absolute;
+      width: 400px;
+      height: 100px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0)100%);
+    }
+
+    .shadow::before {
+      /* 尾1 */
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 70px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0)100%);
+      border: 1px solid gray;
+      left: -51px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .shadow::after {
+      /* 尾2 */
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 100px;
+      background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0)100%);
+      border: 1px solid gray;
+      border-radius: 8px;
+      left: -92px;
+    }
+
+
+
+
+    .mark {
+      /* 刻度 */
+      position: absolute;
+      width: 400px;
+      height: 100px;
+      background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 92%, gray 8%);
+      background-size: 10px 10px;
+      background-repeat: repeat-x;
+    }
+
+    .mark::before {
+      /* 中間黑塊 */
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 100px;
+      background: black;
+    }
+
+    .mark::after {
+      /* 文字 */
+      content: 'Made in Taiwan';
+      position: absolute;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="main"></div>
+    <div class="shadow"></div>
+    <div class="mark"></div>
+
+
+  </div>
+
+</body>
+
+</html>
